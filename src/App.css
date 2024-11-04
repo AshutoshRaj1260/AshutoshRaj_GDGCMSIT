@@ -1,0 +1,53 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.links a  {
+  position: relative; 
+  overflow: hidden;
+}
+
+.links a::after {
+  content: ''; 
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; 
+  height: 2px; 
+  background: black; 
+  transform: translateX(-100%); 
+  transition: transform 0.3s ease, background-color 0.3s ease; 
+}
+
+
+.links a:hover::after {
+  transform: translateX(0); 
+  background: red; 
+}
+
+
+
+.typing-wrapper p::after {
+  content: '|'; 
+  animation: blink 1.5s step-start infinite;
+  color: #0D213F; 
+  margin-left: 2px; 
+}
+
+
+@keyframes blink {
+  50% {
+      opacity: 0;
+  }
+}
+
+.gradient-text {
+  font-size: 2rem; 
+  font-weight: light; 
+  background: linear-gradient(90deg, rgb(5, 203, 253) 15%,purple 20% , red 80%); 
+  -webkit-background-clip: text;
+  background-clip: text; 
+  color: transparent; 
+} 
